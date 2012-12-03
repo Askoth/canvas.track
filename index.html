@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 
-	<title>Lights bitmap track test</title>
+	<title>Canvas Track</title>
+
+
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
 
 </head>
 <body>
-	<h1>Lights Bit Map track test</h1>
-	<p>Lê um mapa de bits e gera um array com as posicoes dos quadrados pretos, pode ser inserido, depois, na funcao de animacao de luzes</p>
-	<p><strong>hub 1 e 2 tem diferentes logicas e de sorting</strong></p>
-	<p>requisitos:</p>
-	<ul>
-		<li>Canvas</li>
-	</ul>
+
+	<input type="file" id="inp-image" />
+
+	<input type="button" id="inp-start-track" value="track!" />
+
+	<div id="canvas-wrap">
+		<!-- <canvas id="playNowWithLights" width="786" height="450"></canvas> -->
+		<canvas id="canvas-bg" width="685" height="420"></canvas>
+		<canvas id="canvas" width="685" height="420"></canvas>
+
+		<div id="test-dummy"></div>
+	</div>
+	<div id="result-to-array">
+
+	</div>
 
 
-<div id="hub">
-	<!-- <canvas id="playNowWithLights" width="786" height="450"></canvas> -->
-	<canvas id="playNowWithLights" width="685" height="420"></canvas>
 
-	<div id="test-dummy"></div>
-</div>
-<div id="result-to-array">
-
-</div>
+	<script src="_js/main.js"></script>
+	<script src="_js/file_api.js"></script>
+	<script src="_js/paint_dots.js"></script>
+	<script src="_js/base.js"></script>
 
 </body>
 </html>

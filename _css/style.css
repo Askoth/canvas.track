@@ -1,11 +1,19 @@
 
-#hub {
+#canvas-wrap {
     width: 786px;
-    background: url(/static/_css/images/hub.jpg) center 0 no-repeat;
     height: 450px;
     float: left;
 
     position: relative;
+
+    border: 1px solid #000;
+}
+
+#canvas {
+    position: absolute;
+}
+#canvas-bg {
+    position: absolute;
 }
 
 #result-to-array {
