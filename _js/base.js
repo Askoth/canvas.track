@@ -82,30 +82,30 @@
     // img.src = '/static/_anim/_imgs/lights-bitmap-hub1.png'
     img.src = '/_anim/_imgs/lights-bitmap-hub3.png'
 
+*/
 
+    function mapDots (imgDataArr) {
 
-    imageCallback = function (imgData) {
-
-        var imgDataArr = imgData.data,
+        var curAlpha = 0,
+            imgDataHeight = canvas.height,
+            imgDataWidth = canvas.width,
             imgDataLength = imgDataArr.length,
-            imgDataHeight = imgData.height,
-            imgDataWidth = imgData.width,
             i = 0,
-            mapArr = [],
             x = 0,
             y = 0,
-            resetYMark = 0;
-
+            mapArr = [];
 
         //###### populate array ######
         console.log('[imageCallback] reads image data');
-
         for (i=0; i < imgDataLength; i +=4) {
-            if (imgDataArr[i] == 0 && imgDataArr[i+1] == 0 && imgDataArr[i+2] == 0) { //i == red, 0 means black
 
-                if (imgDataArr[i - 4] > 0) { //left one is white
+            curAlpha = i + 3;
 
-                    if (imgDataArr[i - (imgDataWidth * 4)] > 0) {
+            if (imgDataArr[curAlpha] > 0) { //i == red, 0 means black
+
+                if (imgDataArr[curAlpha-4] < 1) { //left one is white
+
+                    if (imgDataArr[curAlpha - (imgDataWidth * 4)] > 0) {
 
                         y = Math.floor((i/4)/imgDataWidth);
 
@@ -118,20 +118,24 @@
 
                 }
 
-            } else if (imgDataArr[i] != 255) {
-
-                resetYMark = Math.floor((i/4)/imgDataWidth);
-
-                break;
             }
         }
-
         console.log('imgDataArr[0]', imgDataArr[0], 'imgDataArr[1]', imgDataArr[1], 'imgDataArr[2]', imgDataArr[2], 'imgDataArr[3]', imgDataArr[3]);
         console.log('mapArr', mapArr, 'i:',i);
 
         console.log('[imageCallback] done reading image data');
         //END populate array
+    }
 
+    document.getElementById('inp-start-track').addEventListener('click', function () {
+
+        var imgDataArr = ctx.getImageData(0, 0, canvas.width, canvas.height).data,
+            mapArr;
+
+        mapArr = mapDots(imgDataArr);
+
+    });
+/*
         // not being used
         // ctx.putImageData(imgData, 0, 0);
 
