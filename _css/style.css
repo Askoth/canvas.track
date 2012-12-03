@@ -1,0 +1,25 @@
+
+#hub {
+    width: 786px;
+    background: url(/static/_css/images/hub.jpg) center 0 no-repeat;
+    height: 450px;
+    float: left;
+
+    position: relative;
+}
+
+#result-to-array {
+    float: left;
+    width: 700px;
+}
+
+#test-dummy {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #BADA55;
+    /*opacity: 0.7;*/
+    border-radius: 50%;
+}
