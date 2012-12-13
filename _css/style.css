@@ -18,7 +18,8 @@
 
 #result-to-array {
     float: left;
-    width: 700px;
+    width: 150px;
+    padding: 20px;
 }
 
 #test-dummy {
