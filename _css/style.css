@@ -32,3 +32,14 @@
     /*opacity: 0.7;*/
     border-radius: 50%;
 }
+
+#bg-customization {
+    margin: 10px 0;
+}
+#bg-customization input {
+    margin-right: 20px;
+}
+#bg-customization input,
+#bg-customization label {
+    vertical-align: middle;
+}
